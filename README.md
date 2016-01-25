@@ -2,7 +2,7 @@
 
 Lauren Dyson, Christine Chung, Paul Mack, Leith Mcindewar
 
-### Goal:
+## Goal
 Meet Halfway helps Chicagoans find a place to meet that requires roughly equal travel times for both parties given two starting destinations, preferred modes of transit, and desired type of location (coffee shop, restaurant, park etc.).
 
 ### Data Sources
@@ -30,28 +30,28 @@ Meet Halfway helps Chicagoans find a place to meet that requires roughly equal t
   <dd><b>Progress Check-in </b>: Each group will meet with an instructor for 15-20 minutes once during sixth week and again during eighth week to discuss the group’s progress, challenges, and plans.<dd>
 
   <dt>?</dt>
-  <dd><b>Wire Frames Finalized</b?</dd>
+  <dd><b>Wire Frames Finalized</b></dd>
   
   <dt>?</dt>
-  <dd><b>First Version Algorithm</b?</dd>
+  <dd><b>First Version Algorithm</b></dd>
   
   <dt>?</dt>
-  <dd><b>First Version Front End</b?</dd>
+  <dd><b>First Version Front End</b></dd>
   
   <dt>?</dt>
-  <dd><b>First Version Back End</b?</dd>
+  <dd><b>First Version Back End</b></dd>
   
   <dt>?</dt>
-  <dd><b>Algorithm Completed</b?</dd>
+  <dd><b>Algorithm Completed</b></dd>
   
   <dt>?</dt>
-  <dd><b>Front End Completed</b?</dd>
+  <dd><b>Front End Completed</b></dd>
   
   <dt>?</dt>
-  <dd><b>Back End Completed</b?</dd>
+  <dd><b>Back End Completed</b></dd>
   
   <dt>?</dt>
-  <dd><b>Working Prototype</b?</dd>
+  <dd><b>Working Prototype</b></dd>
   
   <dt>Week of March 10</dt>
   <dd><b>Final Project Presentations (10th week)</b>: Each group must give a 15-20 minute presentation describing its project. The presentation should include descriptions of the project’s goal, the results obtained, and how the system is structured, along with anything interesting the group has learned in the process of building the system.</dd>
