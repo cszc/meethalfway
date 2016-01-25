@@ -2,12 +2,16 @@
 
 Lauren Dyson, Christine Chung, Paul Mack, Leith Mcindewar
 
-## Goal:
+## Goal
 Meet Halfway helps Chicagoans find a place to meet that requires roughly equal travel times for both parties given two starting destinations, preferred modes of transit, and desired type of location (coffee shop, restaurant, park etc.).
+
+## Use Cases
+
 
 ## Data sources
 #### Distance Finding/Transporation Options
 - [Google maps API](https://developers.google.com/maps/?hl=en)
+
 #### Meeting Locations, Business Types, Hours
 - [Google Places](https://developers.google.com/places/?hl=en)
 - [Yelp API](https://www.yelp.com/developers/documentation/v2/overview)
@@ -19,7 +23,7 @@ Meet Halfway helps Chicagoans find a place to meet that requires roughly equal t
 
 #### ?
 - Working Prototype
-- 
+
 #### March 15
 - Project Completed
 
