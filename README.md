@@ -31,33 +31,21 @@ Meet Halfway helps Chicagoans find a place to meet that requires roughly equal t
   <dd><b>Deliver MVP of distance identification</b>: Given two addresses and modes of transit, we can identify a meeting point that's roughly equal travel times for both<dd>
   <dd><b>Progress Check-in</b>: Each group will meet with an instructor for 15-20 minutes once during sixth week and again during eighth week to discuss the group’s progress, challenges, and plans.<dd>
   
+  <dt>Week of February 16</dt>
+  <dd><b>Deliver MVP of user interface</b>: Working prototype of frontend that allows user to input two locations / parameters at once<dd>
+  
   <dt>Week of February 22</dt>
   <dd><b>Deliver MVP of location identification</b>: Given a meeting point, identify K locations meeting user requirements within a radius<dd>
   <dd><b>Progress Check-in</b>: Each group will meet with an instructor for 15-20 minutes once during sixth week and again during eighth week to discuss the group’s progress, challenges, and plans.<dd>
+  
+  <dt>Week of February 29</dt>
+  <dd><b>Deliver phase 2 MVP of user interface</b>: Working prototype of frontend that allows users to separately enter their locations and view a result<dd>
+  
+  <dt>Week of February 29</dt>
+  <dd><b>Deliver phase 2 MVP of user interface</b>: Working prototype of frontend that allows users to separately enter their locations and view a result<dd>
 
-  <dt>?</dt>
-  <dd><b>Wire Frames Finalized</b></dd>
-  
-  <dt>?</dt>
-  <dd><b>First Version Algorithm</b></dd>
-  
-  <dt>?</dt>
-  <dd><b>First Version Front End</b></dd>
-  
-  <dt>?</dt>
-  <dd><b>First Version Back End</b></dd>
-  
-  <dt>?</dt>
-  <dd><b>Algorithm Completed</b></dd>
-  
-  <dt>?</dt>
-  <dd><b>Front End Completed</b></dd>
-  
-  <dt>?</dt>
-  <dd><b>Back End Completed</b></dd>
-  
-  <dt>?</dt>
-  <dd><b>Working Prototype</b></dd>
+  <dt>Week of March 7</dt>
+  <dd><b>Usability testing</b>: Working complete prototype that we can test with users<dd>
   
   <dt>Week of March 10</dt>
   <dd><b>Final Project Presentations (10th week)</b>: Each group must give a 15-20 minute presentation describing its project. The presentation should include descriptions of the project’s goal, the results obtained, and how the system is structured, along with anything interesting the group has learned in the process of building the system.</dd>
