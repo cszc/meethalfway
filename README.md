@@ -40,9 +40,6 @@ Meet Halfway helps Chicagoans find a place to meet that requires roughly equal t
   
   <dt>Week of February 29</dt>
   <dd><b>Deliver phase 2 MVP of user interface</b>: Working prototype of frontend that allows users to separately enter their locations and view a result<dd>
-  
-  <dt>Week of February 29</dt>
-  <dd><b>Deliver phase 2 MVP of user interface</b>: Working prototype of frontend that allows users to separately enter their locations and view a result<dd>
 
   <dt>Week of March 7</dt>
   <dd><b>Usability testing</b>: Working complete prototype that we can test with users<dd>
