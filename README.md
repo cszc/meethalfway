@@ -28,18 +28,18 @@ Meet Halfway helps Chicagoans find a place to meet that requires roughly equal t
     <dd><b>Wireframes completed</b><dd>
 
   <dt>Week of February 8</dt>
-  <dd><b>Deliver MVP of distance identification</b>: Given two addresses and modes of transit, we can identify a meeting point that's roughly equal travel times for both<dd>
+  <dd><b>Deliver MVP of distance identification</b>: Given two addresses and modes of transit, we can identify a meeting point that's roughly equal travel times for both (Main owner: Christine)<dd>
   <dd><b>Progress Check-in</b>: Each group will meet with an instructor for 15-20 minutes once during sixth week and again during eighth week to discuss the group’s progress, challenges, and plans.<dd>
   
   <dt>Week of February 16</dt>
-  <dd><b>Deliver MVP of user interface</b>: Working prototype of frontend that allows user to input two locations / parameters at once<dd>
+  <dd><b>Deliver MVP of user interface</b>: Working prototype of frontend that allows user to input two locations / parameters at once (Main owner: Leith)<dd>
   
   <dt>Week of February 22</dt>
-  <dd><b>Deliver MVP of location identification</b>: Given a meeting point, identify K locations meeting user requirements within a radius<dd>
+  <dd><b>Deliver MVP of location identification</b>: Given a meeting point, identify K locations meeting user requirements within a radius (Main owner: Lauren) <dd>
   <dd><b>Progress Check-in</b>: Each group will meet with an instructor for 15-20 minutes once during sixth week and again during eighth week to discuss the group’s progress, challenges, and plans.<dd>
   
   <dt>Week of February 29</dt>
-  <dd><b>Deliver phase 2 MVP of user interface</b>: Working prototype of frontend that allows users to separately enter their locations and view a result<dd>
+  <dd><b>Deliver phase 2 MVP of user interface</b>: Working prototype of frontend that allows users to separately enter their locations and view a result (Main owner: Paul)<dd>
 
   <dt>Week of March 7</dt>
   <dd><b>Usability testing</b>: Working complete prototype that we can test with users<dd>
