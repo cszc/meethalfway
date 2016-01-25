@@ -5,11 +5,14 @@ Lauren Dyson, Christine Chung, Paul Mack, Leith Mcindewar
 ## Goal
 Meet Halfway helps Chicagoans find a place to meet that requires roughly equal travel times for both parties given two starting destinations, preferred modes of transit, and desired type of location (coffee shop, restaurant, park etc.).
 
+## Use Cases
+
+
 ## Data Sources
-#### Distance Finding/Transporation Options
+##### Distance Finding/Transporation Options
 - [Google maps API](https://developers.google.com/maps/?hl=en)
 
-#### Meeting Locations, Business Types, Hours
+##### Meeting Locations, Business Types, Hours
 - [Google Places](https://developers.google.com/places/?hl=en)
 - [Yelp API](https://www.yelp.com/developers/documentation/v2/overview)
 
