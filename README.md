@@ -31,6 +31,7 @@ Meet Halfway helps Chicagoans find a place to meet that requires roughly equal t
   <dd><b>Progress Check-in</b>: Each group will meet with an instructor for 15-20 minutes once during sixth week and again during eighth week to discuss the group’s progress, challenges, and plans.<dd>
   
   <dt>Week of February 22</dt>
+  <dd><b>MVP location identification</b>: Given a meeting point, identify K locations meeting user requirements within a radius<dd>
   <dd><b>Progress Check-in</b>: Each group will meet with an instructor for 15-20 minutes once during sixth week and again during eighth week to discuss the group’s progress, challenges, and plans.<dd>
 
   <dt>?</dt>
