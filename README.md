@@ -7,21 +7,30 @@ Meet Halfway helps Chicagoans find a place to meet that requires roughly equal t
 
 ## Data sources
 
-- Google maps API
-- Google Places and/or Yelp for info about meeting locations
+- [Google maps API](https://developers.google.com/maps/?hl=en)
+- [Google Places](https://developers.google.com/places/?hl=en) and/or Yelp for info about meeting locations
 
-## Milestones/timeline
+## Milestones/Timeline
 
-### Repo created: Jan 24
+#### January 24
+- Repo Created
 …
 
-### Working prototype: ?
+#### ?
+- Working Prototype
 ...
-Completed: March 15
+#### March 15
+- Project Completed
 
 
-## New things we’re using
-- Google Maps API
-- Google Places/Yelp API
-- Django
-- Javascript?
+## New Things We're Using
+- [Google maps API](https://developers.google.com/maps/?hl=en)
+- [Google Places](https://developers.google.com/places/?hl=en) and/or Yelp for info about meeting locations
+- [Django](https://www.djangoproject.com/)
+- Javascript
+- CSS/HTML
+- Middle Finding Algorithm
+
+## Old Things We're Using
+- Python
+- [SQLite](https://www.sqlite.org/)
