@@ -27,6 +27,7 @@ Meet Halfway helps Chicagoans find a place to meet that requires roughly equal t
     <dd><b>Proposal Presentation</b>:  Ten minute presentation that describes goals and plans.<dd>
 
   <dt>Week of February 8</dt>
+  <dd><b>Given two addresses and modes of transit, we can identify a meeting point that's roughly equal travel times for both<dd>
   <dd><b>Progress Check-in</b>: Each group will meet with an instructor for 15-20 minutes once during sixth week and again during eighth week to discuss the group’s progress, challenges, and plans.<dd>
   
   <dt>Week of February 22</dt>
