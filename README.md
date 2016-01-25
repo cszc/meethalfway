@@ -6,9 +6,10 @@ Lauren Dyson, Christine Chung, Paul Mack, Leith Mcindewar
 Meet Halfway helps Chicagoans find a place to meet that requires roughly equal travel times for both parties given two starting destinations, preferred modes of transit, and desired type of location (coffee shop, restaurant, park etc.).
 
 ## Use Cases
-
-As  a craigslist seller, I want to anonymously arrange a meeting place with a potential buyer at a halfway point between our locations
+As  a Craigslist seller, I want to anonymously arrange a meeting place with a potential buyer at a halfway point between our locations
 As a U Chicago student, I want to meet my friend who lives on the north side at a coffee shop that’s convenient for both of us
+As an online dating service user, I want to find a bar where I can meet my date without revealing my location
+
 
 ## Data Sources
 ##### Distance Finding/Transporation Options
