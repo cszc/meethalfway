@@ -57,6 +57,7 @@ Meet Halfway helps Chicagoans find a place to meet that requires roughly equal t
 - [Google Places API](https://developers.google.com/places/?hl=en)
 - [Yelp API](https://www.yelp.com/developers/documentation/v2/overview)
 - [Django](https://www.djangoproject.com/)
+- Bootstrap
 - Javascript
 - CSS/HTML
 - Middle Finding Algorithm
