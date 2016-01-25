@@ -5,7 +5,7 @@ Lauren Dyson, Christine Chung, Paul Mack, Leith Mcindewar
 ## Goal
 Meet Halfway helps Chicagoans find a place to meet that requires roughly equal travel times for both parties given two starting destinations, preferred modes of transit, and desired type of location (coffee shop, restaurant, park etc.).
 
-### Data Sources
+## Data Sources
 #### Distance Finding/Transporation Options
 - [Google maps API](https://developers.google.com/maps/?hl=en)
 
@@ -13,7 +13,7 @@ Meet Halfway helps Chicagoans find a place to meet that requires roughly equal t
 - [Google Places](https://developers.google.com/places/?hl=en)
 - [Yelp API](https://www.yelp.com/developers/documentation/v2/overview)
 
-### Milestones/Timeline
+## Milestones/Timeline
 
 <dl>
   <dt>January 24</dt>
@@ -24,10 +24,10 @@ Meet Halfway helps Chicagoans find a place to meet that requires roughly equal t
     <dd><b>Proposal Presentation</b>:  Ten minute presentation that describes goals and plans.<dd>
 
   <dt>Week of February 8</dt>
-  <dd><b>Progress Check-in </b>: Each group will meet with an instructor for 15-20 minutes once during sixth week and again during eighth week to discuss the group’s progress, challenges, and plans.<dd>
+  <dd><b>Progress Check-in</b>: Each group will meet with an instructor for 15-20 minutes once during sixth week and again during eighth week to discuss the group’s progress, challenges, and plans.<dd>
   
   <dt>Week of February 22</dt>
-  <dd><b>Progress Check-in </b>: Each group will meet with an instructor for 15-20 minutes once during sixth week and again during eighth week to discuss the group’s progress, challenges, and plans.<dd>
+  <dd><b>Progress Check-in</b>: Each group will meet with an instructor for 15-20 minutes once during sixth week and again during eighth week to discuss the group’s progress, challenges, and plans.<dd>
 
   <dt>?</dt>
   <dd><b>Wire Frames Finalized</b></dd>
@@ -61,7 +61,7 @@ Meet Halfway helps Chicagoans find a place to meet that requires roughly equal t
 </dl>
 
 
-### New Things We're Using
+## New Things We're Using
 - [Google Maps API](https://developers.google.com/maps/?hl=en)
 - [Google Places API](https://developers.google.com/places/?hl=en)
 - [Yelp API](https://www.yelp.com/developers/documentation/v2/overview)
@@ -70,6 +70,6 @@ Meet Halfway helps Chicagoans find a place to meet that requires roughly equal t
 - CSS/HTML
 - Middle Finding Algorithm
 
-### Old Things We're Using
+## Old Things We're Using
 - Python
 - [SQLite](https://www.sqlite.org/)
