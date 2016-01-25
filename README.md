@@ -25,6 +25,7 @@ Meet Halfway helps Chicagoans find a place to meet that requires roughly equal t
   <dt>Jan 26 at 5pm</dt>
   <dd><b>Written Proposal</b>: One or two page proposal that describes the goal of the project and the source of data the group will use. It should also give a basic sketch of the work required to complete the project and a time-line for completing it. The proposal should also include a description of how the group plans to fulfill the third condition listed above.<dd>
     <dd><b>Proposal Presentation</b>:  Ten minute presentation that describes goals and plans.<dd>
+    <dd><b>Wireframes completed</b><dd>
 
   <dt>Week of February 8</dt>
   <dd><b>Deliver MVP of distance identification</b>: Given two addresses and modes of transit, we can identify a meeting point that's roughly equal travel times for both<dd>
