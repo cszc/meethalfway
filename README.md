@@ -2,6 +2,10 @@
 
 Lauren Dyson, Christine Chung, Paul Mack, Leith Mcindewar
 
+## Slides
+
+https://docs.google.com/presentation/d/1ZxHKsRMSGbwFMtpbUibnd6yFMMpW3dBG5YCZxZcA2YM/edit#slide=id.g107979916d_0_182
+
 ## Goal
 Meet Halfway helps Chicagoans find a place to meet that requires roughly equal travel times for both parties given two starting destinations, preferred modes of transit, and desired type of location (coffee shop, restaurant, park etc.).
 
