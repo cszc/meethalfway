@@ -3,21 +3,22 @@
 Lauren Dyson, Christine Chung, Paul Mack, Leith Mcindewar
 
 ## Slides
-
 https://docs.google.com/presentation/d/1ZxHKsRMSGbwFMtpbUibnd6yFMMpW3dBG5YCZxZcA2YM/edit#slide=id.g107979916d_0_182
 
 ## Goal
-Meet Halfway helps Chicagoans find a place to meet that requires roughly equal travel times for both parties given two starting destinations, preferred modes of transit, and desired type of location (coffee shop, restaurant, park etc.).
+Meet Halfway helps Chicagoans find a place to meet safely and securely. Our algorithm makes it easy to find a place to meet a friend or stranger that's convenient for both of you.
+
+Given two starting locations, preferred modes of transit, and a desired type of location (coffe shop, restaurant, park, etc.), Meet Halfway finds a meeting destination with roughly equal travel times for both parties. Meeters have the option revealing their location to the other person or not; this way a meeting location can be agreed upon while protecting privacy.
 
 ## Use Cases
-* As  a Craigslist seller, I want to anonymously arrange a meeting place with a potential buyer at a halfway point between our locations
-* As a U Chicago student, I want to meet my friend who lives on the north side at a coffee shop that’s convenient for both of us
-* As an online dating service user, I want to find a bar where I can meet my date without revealing my location
+* As  a Craigslist seller, I want to arrange a meeting place with a potential buyer at a halfway point without revealing my location.
+* As a U Chicago student, I want to meet my friend who lives on the north side at a coffee shop that’s convenient for both of us.
+* As an online dating service user, I want to find a bar where I can meet my date without revealing my location.
 
 
 ## Data Sources
 ##### Distance Finding/Transporation Options
-- [Google maps API](https://developers.google.com/maps/?hl=en)
+- [Google Maps & Distance Matrix API](https://developers.google.com/maps/?hl=en)
 
 ##### Meeting Locations, Business Types, Hours
 - [Google Places](https://developers.google.com/places/?hl=en)
@@ -60,15 +61,19 @@ Meet Halfway helps Chicagoans find a place to meet that requires roughly equal t
 
 
 ## New Things We're Using
-- [Google Maps API](https://developers.google.com/maps/?hl=en)
-- [Google Places API](https://developers.google.com/places/?hl=en)
-- [Yelp API](https://www.yelp.com/developers/documentation/v2/overview)
-- [Django](https://www.djangoproject.com/)
-- [Bootstrap](http://getbootstrap.com/)
-- Javascript
-- CSS/HTML
-- Middle Finding Algorithm
+- Data & Algorithm
+  - Middle Finding Algorithm
+  - [Google Maps API](https://developers.google.com/maps/?hl=en)
+  - [Google Places API](https://developers.google.com/places/?hl=en)
+  - [Yelp API](https://www.yelp.com/developers/documentation/v2/overview)
+- Backend and Database
+  - [Django](https://www.djangoproject.com/)
+- Frontend 
+  - [Bootstrap](http://getbootstrap.com/)
+  - Javascript
+  - CSS/HTML
 
 ## Old Things We're Using
 - Python
-- [SQLite](https://www.sqlite.org/)
+- Backend
+  - [SQLite](https://www.sqlite.org/)
