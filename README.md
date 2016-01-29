@@ -1,6 +1,6 @@
 # Meet Halfway
 
-Lauren Dyson, Christine Chung, Paul Mack, Leith Mcindewar
+Lauren Dyson, Christine Chung, Paul Mack, Leith McIndewar
 
 ## Slides
 https://docs.google.com/presentation/d/1ZxHKsRMSGbwFMtpbUibnd6yFMMpW3dBG5YCZxZcA2YM/edit#slide=id.g107979916d_0_182
