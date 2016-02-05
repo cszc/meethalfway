@@ -27,7 +27,7 @@ Given two starting locations, preferred modes of transit, and a desired type of 
 ## Milestones/Timeline
 
 <dl>
-  <dt>January 24</dt>
+  <dt>Jan. 24</dt>
   <dd><b>Repo Created</b></dd>
 
   <dt>Jan 26 at 5pm</dt>
