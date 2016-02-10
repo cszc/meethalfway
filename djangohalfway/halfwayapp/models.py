@@ -10,12 +10,10 @@ class Participant(models.Model):
     starting_location = models.ForeignKey(Address, on_delete = models.CASCADE)
     transit_mode = models.TextField(max_length = 70)
 
-
 class Meeting(models.Model):
     participant_one = models.ForeignKey(Participant, on_delete = models.CASCADE)
     participant_two = models.ForeignKey(Participant, on_delete = models.CASCADE)
     business_type = models.TextField()
     private = models.NullBooleanField()
     trip_id = models.IntegerField()
-    url =
     destination = models.ForeignKey(Address, on_delete = models.CASCADE)
