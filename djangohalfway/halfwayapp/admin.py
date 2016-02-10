@@ -1,3 +1,5 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Address, Participant, Meeting
+
+admin.site.register(Address, Participant, Meeting)
