@@ -11,8 +11,8 @@ class Participant(models.Model):
     transit_mode = models.TextField(max_length = 70)
 
 class Meeting(models.Model):
-    participant_one = models.ForeignKey(Participant)
-    participant_two = models.ForeignKey(Participant)
+    participant_one = models.ForeignKey(Participant, related_name = 'Participant_one')
+    participant_two = models.ForeignKey(Participant, related_name = 'Participant_two')
     business_type = models.TextField()
     trip_id = models.IntegerField()
     destination = models.ForeignKey(Address)
