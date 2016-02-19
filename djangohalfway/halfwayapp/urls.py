@@ -19,5 +19,5 @@ from . import views
 
 urlpatterns = [
     # url(r'^admin/', admin.site.urls),
-    url(r'^$', views.test, name = 'test')
+    url(r'^$', views.Enter_First_Address, name = 'Enter_First_Address')
 ]

@@ -1,20 +1,38 @@
 from django.shortcuts import render
-import googlemaps
+#import googlemaps
 import csv
 import time
 import json
 import requests
 from django.http import HttpResponse
+from django import forms
 
-def test(request):
-    return HttpResponse("Hello")
+class AddressForm(forms.Form):
+	street_address = forms.CharField()
+	street_named = forms.CharField() 
+	city = forms.CharField()
+	zipcode = forms.CharField()
+	mode = forms.ChoiceField(choices=[('driving', 'Driving'), ('public', 'Public transit')])
+
+
+def Enter_First_Address(request):
+	if request.method == 'POST':
+		form = AddressForm(request.POST)
+		if form.is_valid():
+			# Save into the database
+			print(form.cleaned_data['city'])
+
+			return HttpResponse('Your response has been added')
+	else:
+		form = AddressForm()
+	c = {'form': form}
+	return render(request, 'halfwayapp/form.html', c)
 
 
 
-#Use different key
 # gmaps = googlemaps.Client(key='enter key here')
 #
-# #via driving
+# #via drstreeiving
 # def get_matrix_via_car(client, origins, destinations, mode='driving'):
 #     matrix = client.distance_matrix(origins, destinations)
 #     return matrix
