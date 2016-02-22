@@ -1,13 +1,16 @@
 <html>
-<h1>Test1</h1>
+<h1>Enter your address here</h1>
 {% block home %}
 <h2>Add address</h2>
 <form method="post">
     {% csrf_token %}
     <table>
-    {{ form }}
+    {% for form in forms %}
+        {{ form }}
+    {% endfor %}
     </table>
 
-    <input type="submit" name="add_meal" value="Add address" />
+
+    <input type="submit" name="add_address" value="Add address" />
 </form>
 {% endblock %}

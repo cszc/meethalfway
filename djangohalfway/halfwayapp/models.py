@@ -7,8 +7,8 @@ class Address(models.Model):
     zip_code = models.CharField(max_length = 5)
 
 class Participant(models.Model):
-    starting_location = models.ForeignKey(Address)
-    transit_mode = models.TextField(max_length = 70)
+    starting_location = models.ForeignKey(Address, null=True, blank=True)
+    transit_mode = models.CharField(max_length = 64)
 
 class Meeting(models.Model):
     participant_one = models.ForeignKey(Participant, related_name = 'Participant_one')

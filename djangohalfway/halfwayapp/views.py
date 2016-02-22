@@ -14,16 +14,30 @@ class AddAddress(forms.ModelForm):
 		model = models.Address
 		fields = ["street", "city", "state", "zip_code"]
 
+class AddParticipant(forms.ModelForm):
+	class Meta:
+		model = models.Participant
+		fields = ["transit_mode"]
+
+class AddMeeting(forms.ModelForm):
+	class Meta:
+		model = models.Meeting
+		fields = ["business_type"]
+
 def home(request):
 	if request.method == 'POST':
-		form = AddAddress(request.POST)
-		if form.is_valid():
-			form.save()
-			form = AddAddress()
+		address = AddAddress(request.POST)
+		participant = AddParticipant(request.POST)
+		if address.is_valid() and participant.is_valid():
+			address.save()
+			participant.starting_location = address
+			participant.save()
+			return HttpResponse("Your response has been added")
 	else:
-		form = AddAddress()
+		address = AddAddress()
+		participant = AddParticipant()
 	c = {
-		'form': form,
+		'forms': [address, participant],
 	}
 
 	return render(request, 'halfwayapp/home.html', c)
