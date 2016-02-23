@@ -1,10 +1,17 @@
+{% load bootstrap3 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+
 <html> 
+{% block bootstrap3_content %}
 	<header>
 	<h1> Welcome. Enter your information below</h1>
     <body>
 
     <form method="post">
     	{% csrf_token %}
+
     	<table>
     	{{ form }}
     	</table>
@@ -15,4 +22,6 @@
 
 
 	</body>
-	</html>
+    {% endblock %}
+</html>
+
