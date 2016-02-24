@@ -1,14 +1,7 @@
-{% load bootstrap3 %}
-{% bootstrap_css %}
-{% bootstrap_javascript %}
+{% extends "halfwayapp/base.html" %}
 
-
-<html> 
-{% block bootstrap3_content %}
-	<header>
-	<h1> Welcome. Enter your information below</h1>
-    <body>
-
+{% block content %}
+<div>
     <form method="post">
     	{% csrf_token %}
 
@@ -18,10 +11,6 @@
     	<input type="submit" name="submit" value="Submit" />
 
     </form>
-
-
-
-	</body>
-    {% endblock %}
-</html>
+</div>
+{% endblock %}
 
