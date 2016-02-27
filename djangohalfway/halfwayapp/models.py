@@ -38,15 +38,17 @@ class Meeting(models.Model):
         ("Bar", "Bar"),
         ("Eatery", "Restaurant"),
         )
-    participant_one = models.ForeignKey(Participant, related_name = 'participant_one', null = True, blank =  True)
-    participant_two = models.ForeignKey(Participant, related_name = 'participant_two', null = True, blank = True)
-    business_type = models.CharField(max_length=64, null=True, blank=True, choices = BUSINESS_TYPES)
+    participant_one = models.ForeignKey(
+        Participant, related_name = 'participant_one', null = True, blank =  True)
+    participant_two = models.ForeignKey(
+        Participant, related_name = 'participant_two', null = True, blank = True)
+    business_type = models.CharField(
+        max_length=64, null=True, blank=True, choices = BUSINESS_TYPES)
     trip_id = models.IntegerField(null=True, blank = True)
     destinations = models.ForeignKey(Address, null=True, blank = True)
     midpoint = models.ForeignKey()
     trip_id = models.CharField(max_length = 100, null=True, blank = True)
     destination = models.ForeignKey(Address, null=True, blank = True)
->>>>>>> refs/remotes/origin/master
 
     def get_id(self):
         return self.id
@@ -67,26 +69,22 @@ class Meeting(models.Model):
         w3 = rw.random_word()
         return w1 + "-" + w2 + "-" + w3
 
-
     def __str__(self):
         return "%s " % (self.destination)
 
     def get_destinations():
-        #pseudo json and dicts
-        participanta_directions = get_directions(a address)
-        participantb_directions = get_directions(b address)
 
+    def get_potential_destinations(participant):
+        #returns pseudo json and dicts
+        directions = get_directions(gmaps, participant.address)
         #returns tuple (substeps, time)
-        steps_and_time_a = get_steps_and_time(participanta_directions)
-        steps_and_time_b = get_steps_and_time(participantb_directions)
-
+        steps_and_time = get_steps_and_time(directions)
         #returns latlongs
-        midpoint_a = get_midpoint(steps_and_time_a)
-        midpoint_b = get_midpoint(steps_and_time_b)
+        midpoint = get_midpoint(steps_and_time)
+        #returns ?
+        potential_destinations = find_places(midpoint_a, business_type)
 
-        potential_places_a = find_places(midpoint_a, business_type)
-        potential_places_b = find_places(midpoint_b, business_type)
-
+        return potential_destinations
         potential_places = potential_places_a + potential_places_b
 
         matrix_a = get_matrix(a_address, potential_places)
@@ -97,8 +95,8 @@ class Meeting(models.Model):
         return top 5 best scores, or rereun if scores not good enough
 
     def get_directions(client, origin, destination, mode='transit'):
-    directions = client.directions(origin, destination, mode)
-    return directions
+        directions = client.directions(origin, destination, mode)
+        return directions
 
     def get_steps_and_time(directions):
         legs = directions[0]['legs']
@@ -143,15 +141,20 @@ class Meeting(models.Model):
                 continue
             return(bisect(target_time, current_time, step))
 
-    def get_places(client, query, location, radius = '800'):
-        places = client.places(query, location = location, radius = radius)
+    def get_places(client, location,  query = '', radius = '800', open_now = False, types = None):
+        places = client.places(
+            query = query,
+            location = location,
+            radius = radius,
+            open_now = False,
+            types = types)
         return(places)
-
-    def find_places(args):
-    	r = requests.get("https://maps.googleapis.com/maps/api/place/nearbysearch/json?", params = args)
-    	print(r.url)
-    	data = r.json()
-    	return(data)
+    #
+    # def find_places(args):
+    # 	r = requests.get("https://maps.googleapis.com/maps/api/place/nearbysearch/json?", params = args)
+    # 	print(r.url)
+    # 	data = r.json()
+    # 	return(data)
 
     def parse_places(args):
     	places = find_places(args)
@@ -164,8 +167,8 @@ class Meeting(models.Model):
     	return rv
 
     def get_matrix_via_car(client, origins, destinations, mode='driving'):
-	 matrix = client.distance_matrix(origins, destinations)
-	 return matrix
+        matrix = client.distance_matrix(origins, destinations)
+        return matrix
 
     #via public transportation
     def get_matrix_via_transit(client, origins, destinations, mode='transit'):
