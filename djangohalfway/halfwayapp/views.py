@@ -9,60 +9,127 @@ from django import forms
 from . import models
 
 
+
+
+# BUSINESS_TYPES = (
+#         ("Coffee", "Coffee Shop"),
+#         ("Bar", "Bar"),
+#         ("Eatery", "Restaurant"),
+#         )
+
+class EnterIDForm(forms.Form):
+	meeting_id = forms.CharField()
+	def validate_trip_id(self):
+		if Meeting.objects.filter(trip_id=  meeting_id):
+			return trip_id
+		else:
+			raise forms.ValidationError("Please enter a valid Meeting Trip ID number.")
+
+
+
 class AddAddress(forms.ModelForm):
 	class Meta:
 		model = models.Address
 		fields = ["street", "city", "state", "zip_code"]
 
+	
+
 class AddParticipant(forms.ModelForm):
 	class Meta:
 		model = models.Participant
 		fields = ["transit_mode"]
+		widgets = {
+			'transit_mode': forms.Select(),
+		}
+
 
 class AddMeeting(forms.ModelForm):
 	class Meta:
 		model = models.Meeting
 		fields = ["business_type"]
+		widgets = {
+			'business_type': forms.Select(),
+		}
 
 def home(request):
 	if request.method == 'POST':
 		address = AddAddress(request.POST)
 		participant = AddParticipant(request.POST)
-		if address.is_valid() and participant.is_valid():
-			address.save()
-			participant.starting_location = address
-			participant.save()
-			return HttpResponse("Your response has been added")
+		meeting = AddMeeting(request.POST)
+
+		if address.is_valid() and participant.is_valid() and meeting.is_valid():
+			address_obj = address.save()
+			part_obj = participant.save()
+			part_obj.starting_location = address_obj
+			part_obj.save()
+
+			meeting_obj = meeting.save()
+			meeting_obj.participant_one = part_obj
+			meeting_obj.trip_id = meeting_obj.hash_id()
+			meeting_obj.save()
+
+			c =  {
+				'uniq': meeting_obj.trip_id
+			}
+			return render(request,'halfwayapp/response.html',c)
+
 	else:
 		address = AddAddress()
 		participant = AddParticipant()
+		meeting = AddMeeting()
+
 	c = {
-		'forms': [address, participant],
+		'forms': [address, participant, meeting],
 	}
 
 	return render(request, 'halfwayapp/home.html', c)
 
-class AddressForm(forms.Form):
-	street_address = forms.CharField()
-	street_named = forms.CharField()
-	city = forms.CharField()
-	zipcode = forms.CharField()
-	mode = forms.ChoiceField(choices=[('driving', 'Driving'), ('public', 'Public transit')])
+def personA(request, address, participant, meeting):
+	address_obj = address.save()
+	part_obj = participant.save()
+	part_obj.starting_location = address_obj
+	part_obj.save()
 
+	meeting_obj = meeting.save()
+	meeting_obj.participant_one = part_obj
+	meeting_obj.trip_id = meeting_obj.hash_id()
+	meeting_obj.save()
 
-def Enter_First_Address(request):
+	c =  {
+		'uniq': meeting_obj.trip_id
+	}
+	return render(request,'halfwayapp/response.html',c)
+
+def respond(request):
 	if request.method == 'POST':
-		form = AddressForm(request.POST)
-		if form.is_valid():
-			# Save into the database
-			print(form.cleaned_data['city'])
+		trip_id = GetMeetingID(request.Post)
+		# address = AddAddress(request.POST)
+		# participant = AddParticipant(request.POST)
+		# meeting = AddMeeting(request.POST)
+		# if address.is_valid() and participant.is_valid() and meeting.is_valid():
+		# 	address_obj = address.save()
+		# 	part_obj = participant.save()
+		# 	part_obj.starting_location = address_obj
+		# 	part_obj.save()
 
-			return HttpResponse('Your response has been added')
-	else:
-		form = AddressForm()
-	c = {'form': form}
-	return render(request, 'halfwayapp/form.html', c)
+		# 	meeting_obj = meeting.save()
+		# 	meeting_obj.participant_one = part_obj
+		# 	meeting_obj.trip_id = meeting_obj.hash_id()
+		# 	meeting_obj.save()
 
+		# 	c =  {
+		# 		'uniq': meeting_obj.trip_id
+		# 	}
+		# 	return render(request,'halfwayapp/response.html',c)
+	# else:
+	# 	address = AddAddress()
+	# 	participant = AddParticipant()
+	# 	meeting = AddMeeting()
+	c = {
+		'forms': [GetMeetingID]
+	}
+
+	
 
 
 # gmaps = googlemaps.Client(key='enter key here')

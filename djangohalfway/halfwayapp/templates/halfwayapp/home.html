@@ -1,7 +1,13 @@
+<<<<<<< Updated upstream
 {% extends "base.html" %}
 
 {% block content %}
 <h1>Enter your address here</h1>
+=======
+<html>
+<h1>If You Want to Create a New Meeting. Enter your address here</h1>
+{% block home %}
+>>>>>>> Stashed changes
 <h2>Add address</h2>
 <form method="post">
     {% csrf_token %}
@@ -10,8 +16,11 @@
         {{ form }}
     {% endfor %}
     </table>
-
-
-    <input type="submit" name="add_address" value="Add address" />
+    <input type="submit" name="PersonA_submit" value="Submit" />
 </form>
+
+
+
+
+  
 {% endblock %}
