@@ -15,7 +15,19 @@
         {{ form }}
     {% endfor %}
     </table>
-    <input type="submit" name="PersonA_submit" value="Submit" class="btn btn-success"/>
+    <input type="submit" name="PersonA_submit" value="Submit Address" class="btn btn-success"/>
+</form>
+<h1>Or... <small>If someone sent you a meeting ID, enter it below</small></h1>
+</div>
+</div>
+<div class="container">
+<div class="row">
+<form method="post" class="form-horizontal">
+{% csrf_token %}
+<table class="table-condensed">
+    {{ trip_id_form }}
+</table>
+<input type="submit" name="Enter_trip_id" value="Enter Trip ID" class="btn btn-success"/>
 </form>
 
 </div>
@@ -23,5 +35,5 @@
 </div>
 
 
-  
+
 {% endblock %}

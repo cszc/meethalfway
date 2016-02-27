@@ -41,7 +41,7 @@ class Meeting(models.Model):
         hash_val = 0
         for char in self.business_type:
             current = ord(char[0])
-            hash_val += ((current + hash_val) * self.id) 
-        return hash_val 
+            hash_val += ((current + hash_val) * self.id)
+        return hash_val
     def __str__(self):
         return "%s " % (self.destination)
