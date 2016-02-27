@@ -7,7 +7,6 @@ from random_words import RandomWords
 
 with open('apikeys.txt', 'r') as f:
     apikey = f.readline()
-    print(apikey)
 
 gmaps = googlemaps.Client(key=apikey)
 
@@ -46,9 +45,6 @@ class Meeting(models.Model):
     business_type = models.CharField(
         max_length=64, null=True, blank=True, choices = BUSINESS_TYPES)
     trip_id = models.IntegerField(null=True, blank = True)
-    destinations = models.ForeignKey(Address, null=True, blank = True)
-    # midpoint = models.ForeignKey()
-    trip_id = models.CharField(max_length = 100, null=True, blank = True)
     destinations = models.ForeignKey(Address, null=True, blank = True)
 
     def get_id(self):
