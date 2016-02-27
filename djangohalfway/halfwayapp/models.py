@@ -47,9 +47,9 @@ class Meeting(models.Model):
         max_length=64, null=True, blank=True, choices = BUSINESS_TYPES)
     trip_id = models.IntegerField(null=True, blank = True)
     destinations = models.ForeignKey(Address, null=True, blank = True)
-    midpoint = models.ForeignKey()
+    # midpoint = models.ForeignKey()
     trip_id = models.CharField(max_length = 100, null=True, blank = True)
-    destination = models.ForeignKey(Address, null=True, blank = True)
+    destinations = models.ForeignKey(Address, null=True, blank = True)
 
     def get_id(self):
         return self.id
@@ -71,28 +71,28 @@ class Meeting(models.Model):
     def __str__(self):
         return "%s " % (self.destination)
 
-    def get_destinations():
-        stuff = None
+    # def get_destinations():
+    #     stuff = None
 
-    def get_potential_destinations(participant):
-        #returns pseudo json and dicts
-        directions = get_directions(gmaps, participant.address)
-        #returns tuple (substeps, time)
-        steps_and_time = get_steps_and_time(directions)
-        #returns latlongs
-        midpoint = get_midpoint(steps_and_time)
-        #returns ?
-        potential_destinations = find_places(midpoint_a, business_type)
+    # def get_potential_destinations(participant):
+    #     #returns pseudo json and dicts
+    #     directions = get_directions(gmaps, participant.address)
+    #     #returns tuple (substeps, time)
+    #     steps_and_time = get_steps_and_time(directions)
+    #     #returns latlongs
+    #     midpoint = get_midpoint(steps_and_time)
+    #     #returns ?
+    #     potential_destinations = find_places(midpoint_a, business_type)
 
-        return potential_destinations
-        potential_places = potential_places_a + potential_places_b
+    #     return potential_destinations
+    #     potential_places = potential_places_a + potential_places_b
 
-        matrix_a = get_matrix(a_address, potential_places)
-        matrix_b = get_matrix(b_address, potential_places)
+    #     matrix_a = get_matrix(a_address, potential_places)
+    #     matrix_b = get_matrix(b_address, potential_places)
 
-        #function to compare matrix a travel times with b travel times
+    #     #function to compare matrix a travel times with b travel times
 
-        #return top 5 best scores, or rereun if scores not good enough
+    #     #return top 5 best scores, or rereun if scores not good enough
 
     def get_directions(client, origin, destination, mode='transit'):
         directions = client.directions(origin, destination, mode)
