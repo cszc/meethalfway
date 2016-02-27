@@ -65,7 +65,7 @@ def home(request):
 
 			meeting_obj = meeting.save()
 			meeting_obj.participant_one = part_obj
-			meeting_obj.trip_id = meeting_obj.hash_id()
+			meeting_obj.trip_id = meeting_obj.random_words()
 			meeting_obj.save()
 
 			c =  {

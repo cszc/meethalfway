@@ -1,4 +1,5 @@
 from django.db import models
+from random_words import RandomWords
 
 class Address(models.Model):
     street = models.CharField(max_length = 64)
@@ -31,7 +32,7 @@ class Meeting(models.Model):
     participant_one = models.ForeignKey(Participant, related_name = 'participant_one', null = True, blank =  True)
     participant_two = models.ForeignKey(Participant, related_name = 'participant_two', null = True, blank = True)
     business_type = models.CharField(max_length=64, null=True, blank=True, choices = BUSINESS_TYPES)
-    trip_id = models.IntegerField(null=True, blank = True)
+    trip_id = models.CharField(max_length = 100, null=True, blank = True)
     destination = models.ForeignKey(Address, null=True, blank = True)
 
     def get_id(self):
@@ -43,5 +44,15 @@ class Meeting(models.Model):
             current = ord(char[0])
             hash_val += ((current + hash_val) * self.id) 
         return hash_val 
+
+    def random_words(self):
+        rw =  RandomWords()
+        w1 = rw.random_word()
+        w2 = rw.random_word()
+        w3 = rw.random_word()
+        return w1 + "-" + w2 + "-" + w3
+
+
+
     def __str__(self):
         return "%s " % (self.destination)
