@@ -68,10 +68,11 @@ class Meeting(models.Model):
         return "%s " % (self.destination)
 
 
-    def get_destinations():
-        stuff = None
 
     def get_potential_destinations(participant):
+        '''
+        returns a tuple of potential destinations (dicts) and list of latlongs
+        '''
         #returns pseudo json and dicts
         directions = get_directions(gmaps, participant.address)
         #returns tuple (substeps, time)
@@ -79,25 +80,21 @@ class Meeting(models.Model):
         #returns latlongs
         midpoint = get_midpoint(steps_and_time)
         #returns ?
-        potential_destinations = find_places(midpoint_a, business_type)
-
+        # todo: build input args dictionary from user input
+        places_dict = something
+        potential_destinations = get_places(places_dict)
         return potential_destinations
-        potential_places = potential_places_a + potential_places_b
 
-        matrix_a = get_matrix(a_address, potential_places)
-        matrix_b = get_matrix(b_address, potential_places)
 
-        #function to compare matrix a travel times with b travel times
-
-        #return top 5 best scores, or rereun if scores not good enough
-
+    # this needs to be called when Participant B enters address
+    # need to test if there are 2 modes of transit
     def get_destinations(address_a, address_b):
         potential_dest_a, latlngs_a = get_potential_destinations(participant_one)
         potential_dest_b, latlngs_b = get_potential_destinations(participant_two)
         potential_latlngs = latlngs_a + latlngs_b
         matrix_a = get_matrix(a_address, potential_latlngs)
         matrix_b = get_matrix(b_address, potential_latlngs)
-        get_results(matrix_a, matrix_b)
+        return get_results(matrix_a, matrix_b)
 
     def get_results(matrix_one, matrix_two):
         scores = []
