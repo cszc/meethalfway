@@ -1,25 +1,26 @@
-<<<<<<< Updated upstream
-{% extends "base.html" %}
+{% extends "halfwayapp/base.html" %}
 
 {% block content %}
-<h1>Enter your address here</h1>
-=======
-<html>
-<h1>If You Want to Create a New Meeting. Enter your address here</h1>
-{% block home %}
->>>>>>> Stashed changes
-<h2>Add address</h2>
-<form method="post">
+<div class = "container">
+    <div class="row">
+    <h1>Let's get started. <small>Enter your starting point.</small></h1>
+</div>
+</div>
+<div class="container">
+<div class="row">
+    <form method="post" class="form-horizontal">
     {% csrf_token %}
-    <table>
+    <table class="table-condensed">
     {% for form in forms %}
         {{ form }}
     {% endfor %}
     </table>
-    <input type="submit" name="PersonA_submit" value="Submit" />
+    <input type="submit" name="PersonA_submit" value="Submit" class="btn btn-success"/>
 </form>
 
-
+</div>
+</div>
+</div>
 
 
   
