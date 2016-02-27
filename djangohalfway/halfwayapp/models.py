@@ -7,6 +7,7 @@ from random_words import RandomWords
 
 with open('apikeys.txt', 'r') as f:
     apikey = f.readline()
+    print(apikey)
 
 gmaps = googlemaps.Client(key=apikey)
 
@@ -59,8 +60,6 @@ class Meeting(models.Model):
             current = ord(char[0])
             hash_val += ((current + hash_val) * self.id)
         return hash_val
-            hash_val += ((current + hash_val) * self.id)
-        return hash_val
 
     def random_words(self):
         rw =  RandomWords()
@@ -73,6 +72,7 @@ class Meeting(models.Model):
         return "%s " % (self.destination)
 
     def get_destinations():
+        stuff = None
 
     def get_potential_destinations(participant):
         #returns pseudo json and dicts
@@ -92,7 +92,7 @@ class Meeting(models.Model):
 
         #function to compare matrix a travel times with b travel times
 
-        return top 5 best scores, or rereun if scores not good enough
+        #return top 5 best scores, or rereun if scores not good enough
 
     def get_directions(client, origin, destination, mode='transit'):
         directions = client.directions(origin, destination, mode)
