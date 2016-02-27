@@ -67,32 +67,83 @@ class Meeting(models.Model):
     def __str__(self):
         return "%s " % (self.destination)
 
-    # def get_destinations():
-    #     stuff = None
 
-    # def get_potential_destinations(participant):
-    #     #returns pseudo json and dicts
-    #     directions = get_directions(gmaps, participant.address)
-    #     #returns tuple (substeps, time)
-    #     steps_and_time = get_steps_and_time(directions)
-    #     #returns latlongs
-    #     midpoint = get_midpoint(steps_and_time)
-    #     #returns ?
-    #     potential_destinations = find_places(midpoint_a, business_type)
+    def get_destinations():
+        stuff = None
 
-    #     return potential_destinations
-    #     potential_places = potential_places_a + potential_places_b
+    def get_potential_destinations(participant):
+        #returns pseudo json and dicts
+        directions = get_directions(gmaps, participant.address)
+        #returns tuple (substeps, time)
+        steps_and_time = get_steps_and_time(directions)
+        #returns latlongs
+        midpoint = get_midpoint(steps_and_time)
+        #returns ?
+        potential_destinations = find_places(midpoint_a, business_type)
 
-    #     matrix_a = get_matrix(a_address, potential_places)
-    #     matrix_b = get_matrix(b_address, potential_places)
+        return potential_destinations
+        potential_places = potential_places_a + potential_places_b
 
-    #     #function to compare matrix a travel times with b travel times
+        matrix_a = get_matrix(a_address, potential_places)
+        matrix_b = get_matrix(b_address, potential_places)
 
-    #     #return top 5 best scores, or rereun if scores not good enough
+        #function to compare matrix a travel times with b travel times
+
+        #return top 5 best scores, or rereun if scores not good enough
+
+    def get_destinations(address_a, address_b):
+        potential_dest_a, latlngs_a = get_potential_destinations(participant_one)
+        potential_dest_b, latlngs_b = get_potential_destinations(participant_two)
+        potential_latlngs = latlngs_a + latlngs_b
+        matrix_a = get_matrix(a_address, potential_latlngs)
+        matrix_b = get_matrix(b_address, potential_latlngs)
+        get_results(matrix_a, matrix_b)
+
+    def get_results(matrix_one, matrix_two):
+        scores = []
+        addresses = matrix_a['destination_addresses']
+        a_times = matrix_a['rows'][0]['elements']
+        b_times = matrix_b['rows'][0]['elements']
+        for i, a in enumerate(addresses):
+            a_time = a_times[i]['duration']['value']
+            b_time = b_times[i]['duration']['value']
+            if a_time <= b_time:
+                score = 1 - (a_time/b_time)
+            else:
+                score = 1 - (b_time/a_time)
+            scores.append((a, a_time, b_time, score))
+        rv = []
+        for score in scores:
+            if len(rv) < 5:
+                if score[3] < 0.2:
+                    rv.append(score)
+        if len(rv) == 0:
+            best_scores = sorted(scores, key=lambda tup: tup[3])
+            found_result = False
+            return found_result, best_scores[0][0]
+        else:
+            rv = sorted(rv, key=lambda tup: tup[3])
+            found_result = True
+            return found_result, rv
+
+    def get_potential_destinations(participant):
+        '''
+        returns a tuple of potential destinations (dicts) and list of latlongs
+        '''
+        #returns pseudo json and dicts
+        directions = get_directions(gmaps, participant.address)
+        #returns tuple (substeps, time)
+        steps_and_time = get_steps_and_time(directions)
+        #returns latlongs
+        midpoint = get_midpoint(steps_and_time)
+        #returns ?
+        places_dict = something
+        potential_destinations = get_places(places_dict)
+        return potential_destinations
+
 
     def get_directions(client, origin, destination, mode='transit'):
-        directions = client.directions(origin, destination, mode)
-        return directions
+        return client.directions(origin, destination, mode)
 
     def get_steps_and_time(directions):
         legs = directions[0]['legs']
@@ -137,23 +188,13 @@ class Meeting(models.Model):
                 continue
             return(bisect(target_time, current_time, step))
 
-    def get_places(client, location,  query = '', radius = '800', open_now = False, types = None):
-        places = client.places(
-            query = query,
-            location = location,
-            radius = radius,
-            open_now = False,
-            types = types)
-        return(places)
-    #
-    # def find_places(args):
-    # 	r = requests.get("https://maps.googleapis.com/maps/api/place/nearbysearch/json?", params = args)
-    # 	print(r.url)
-    # 	data = r.json()
-    # 	return(data)
+    def get_places(args):
+    	r = requests.get("https://maps.googleapis.com/maps/api/place/nearbysearch/json?", params = args)
+    	data = r.json()
+        latlngs = parse_places(data)
+    	return(data, latlngs)
 
-    def parse_places(args):
-    	places = find_places(args)
+    def parse_places(places):
     	rv = []
     	for p in places["results"]:
     		lat = p['geometry']['location']['lat']
