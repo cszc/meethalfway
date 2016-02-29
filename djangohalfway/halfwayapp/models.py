@@ -82,12 +82,18 @@ class Meeting(models.Model):
         #returns ?
         # todo: build input args dictionary from user input
         places_dict = something
+        # 
         potential_destinations = get_places(places_dict)
         return potential_destinations
 
 
     # this needs to be called when Participant B enters address
     # need to test if there are 2 modes of transit
+    # returns tuple: got_results, and list of places OR best address
+    # if got_results == FALSE, need to retry finding destinations with new address
+    # otherwise returns list of best addresses -- add each destination to the meeting model w
+    # info about the business place
+    
     def get_destinations(address_a, address_b):
         potential_dest_a, latlngs_a = get_potential_destinations(participant_one)
         potential_dest_b, latlngs_b = get_potential_destinations(participant_two)
@@ -186,19 +192,19 @@ class Meeting(models.Model):
             return(bisect(target_time, current_time, step))
 
     def get_places(args):
-    	r = requests.get("https://maps.googleapis.com/maps/api/place/nearbysearch/json?", params = args)
-    	data = r.json()
+        r = requests.get("https://maps.googleapis.com/maps/api/place/nearbysearch/json?", params = args)
+        data = r.json()
         latlngs = parse_places(data)
-    	return(data, latlngs)
+        return(data, latlngs)
 
     def parse_places(places):
-    	rv = []
-    	for p in places["results"]:
-    		lat = p['geometry']['location']['lat']
-    		lng = p['geometry']['location']['lng']
-    		coords = str(lat) + "," + str(lng)
-    		rv.append(coords)
-    	return rv
+        rv = []
+        for p in places["results"]:
+            lat = p['geometry']['location']['lat']
+            lng = p['geometry']['location']['lng']
+            coords = str(lat) + "," + str(lng)
+            rv.append(coords)
+        return rv
 
     def get_matrix_via_car(client, origins, destinations, mode='driving'):
         matrix = client.distance_matrix(origins, destinations)
@@ -206,22 +212,22 @@ class Meeting(models.Model):
 
     #via public transportation
     def get_matrix_via_transit(client, origins, destinations, mode='transit'):
-    	 matrix = client.distance_matrix(origins, destinations)
-    	 return matrix
+         matrix = client.distance_matrix(origins, destinations)
+         return matrix
 
     def get_rows(distance_matrix):
-    	 '''
-    	 takes a list of dicts returned by google distance matrix call
-    	 '''
-    	 rows = []
-    	 for i, address in enumerate(distance_matrix['origin_addresses']):
-    		 for i, e in enumerate(distance_matrix['rows'][i]['elements']):
-    			 rows.append({
-    				 'origin': address,
-    				 'destination': car_times['destination_addresses'][i],
-    				 'distance1': e['distance']['text'],
-    				 'distance2': e['distance']['value'],
-    				 'duration1': e['duration']['text'],
-    				 'duration2': e['duration']['value'],
-    				 'status': e['status']
-    				 })
+         '''
+         takes a list of dicts returned by google distance matrix call
+         '''
+         rows = []
+         for i, address in enumerate(distance_matrix['origin_addresses']):
+             for i, e in enumerate(distance_matrix['rows'][i]['elements']):
+                 rows.append({
+                     'origin': address,
+                     'destination': car_times['destination_addresses'][i],
+                     'distance1': e['distance']['text'],
+                     'distance2': e['distance']['value'],
+                     'duration1': e['duration']['text'],
+                     'duration2': e['duration']['value'],
+                     'status': e['status']
+                     })
